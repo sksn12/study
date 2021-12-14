@@ -1,0 +1,19 @@
+@value makerGreen from "../../common/colors.css";
+
+.total_page {
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  padding-right: 10px;
+  border-right: 1px solid lightgray;
+  height: 100%;
+}
+.total_title {
+  color: makerGreen;
+  font-size: 32px;
+  color: brown;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+}

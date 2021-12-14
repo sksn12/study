@@ -1,0 +1,18 @@
+.PreviewTotal {
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  padding-right: 10px;
+  height: 100%;
+}
+span {
+  color: makerGreen;
+  font-size: 32px;
+  color: brown;
+}
+.PreviewBox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 20px;
+}

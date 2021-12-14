@@ -1,0 +1,15 @@
+.btn_logOut {
+  width: 80px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  transition: transform ease-in 250ms;
+  position: absolute;
+  z-index: 1;
+}
+.btn_logOut:hover {
+  transform: scale(1.1);
+}

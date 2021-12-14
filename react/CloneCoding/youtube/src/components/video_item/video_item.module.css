@@ -1,0 +1,30 @@
+.item {
+  display: flex;
+  width: 50%;
+  cursor: pointer;
+  transition: transform 250ms ease-in;
+  border: 1px solid lightgray;
+  margin-bottom: 10px;
+}
+.item:hover {
+  transform: scale(1.02);
+}
+.grid {
+  width: 50%;
+}
+.list {
+  width: 100%;
+}
+.img {
+  width: 40%;
+  height: 100%;
+}
+.spans {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.title,
+.channel {
+}

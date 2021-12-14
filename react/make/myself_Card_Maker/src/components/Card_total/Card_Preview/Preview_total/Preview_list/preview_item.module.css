@@ -1,0 +1,48 @@
+@value makerColorful from "../../../../../common/colors.css";
+@value makerWheat from "../../../../../common/colors.css";
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 250px;
+  margin: auto;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 2px 3px rgba(145, 145, 145, 0.6),
+    3px 3px 2px 3px rgba(145, 145, 145, 0.6);
+  margin-bottom: 15px;
+}
+.black {
+  background: black;
+  color: white;
+}
+.Light {
+  background: none;
+  color: black;
+}
+.colorful {
+  background: makerColorful;
+  color: white;
+}
+.img_span {
+  border-radius: 50%;
+  background: blue;
+  width: 30%;
+  height: 200px;
+}
+.h_items {
+  width: 60%;
+}
+.h2_boder {
+  background: makerWheat;
+  height: 1px;
+  width: 1000px;
+}
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 20px;
+}

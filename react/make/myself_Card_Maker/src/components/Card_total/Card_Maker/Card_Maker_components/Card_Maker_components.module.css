@@ -1,0 +1,53 @@
+@value makerBlack from "../../../../common/colors.css";
+@value makerGreen from "../../../../common/colors.css";
+@value makerLightGrey from "../../../../common/colors.css";
+
+.form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  border: 1px solid makerBlack;
+  margin-bottom: 1em;
+  margin-top: 1rem;
+}
+input,
+select {
+  width: 100%;
+  flex: 1 1 30%;
+  font-size: 20px;
+}
+textarea {
+  width: 100%;
+  font-size: 20px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0;
+}
+
+.btn_nofile {
+  width: 100%;
+  flex: 1 1 50%;
+  height: 40px;
+  background-color: makerLightGrey;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_Add {
+  width: 100%;
+  flex: 1 1 50%;
+  height: 40px;
+  cursor: pointer;
+  background-color: makerGreen;
+  font-size: 20px;
+  color: white;
+  outline: none;
+  border: none;
+}
+.btn_form {
+  display: none;
+}
