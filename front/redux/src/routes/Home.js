@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import ToDo from "../components/ToDo";
 import { actionCreators } from "../store";
+import TookitStore from "../tookitStore";
 
 const Home = ({ toDos, addToDo }) => {
   const [text, setText] = useState("");
@@ -25,6 +26,7 @@ const Home = ({ toDos, addToDo }) => {
           <ToDo key={todo.id} todo={todo} />
         ))}
       </ul>
+      <TookitStore />
     </>
   );
 };
