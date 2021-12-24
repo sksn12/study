@@ -30,6 +30,13 @@ describe("Calculator", () => {
     expect(cal.value).toBe(3);
   });
 
+  //js에서던지는 에러 메세지와 테스트코드에서의 에러메세지가 동일해야함
+  it("add should throw an error if value is greater than 100", () => {
+    expect(() => {
+      cal.add(101);
+    }).toThrow("Value can not be greater than 100");
+  });
+
   it("subtract", () => {
     cal.set(4);
     cal.subtract(1);
