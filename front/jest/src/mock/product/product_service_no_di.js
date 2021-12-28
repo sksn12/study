@@ -1,4 +1,4 @@
-const ProductClient = require('./product_client');
+const ProductClient = require("./product_client");
 class ProductService {
   constructor() {
     this.productClient = new ProductClient();
@@ -6,7 +6,7 @@ class ProductService {
 
   fetchAvailableItems() {
     return this.productClient
-      .fetchItems()
+      .fetchItems1()
       .then((items) => items.filter((item) => item.available));
   }
 }
