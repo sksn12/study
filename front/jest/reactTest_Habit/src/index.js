@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app";
 import "@fortawesome/fontawesome-free/js/all.js";
-import ClassApp from "./app";
+import ClassApp from "./classApp";
+
 const classApp = new ClassApp();
 ReactDOM.render(
   <React.StrictMode>
