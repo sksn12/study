@@ -1,35 +1,44 @@
 import React from "react";
+import { useCallback } from "react";
 import { useState } from "react";
 import "./app.css";
 import Habits from "./components/habits";
 import Navbar from "./components/navbar";
 
-const App = ({ classApp }) => {
-  const [habits, setHabits] = useState([
-    { id: 1, name: "Reading", count: 0 },
-    { id: 2, name: "Running", count: 0 },
-    { id: 3, name: "Coding", count: 0 },
-  ]);
+const App = ({ presenter }) => {
+  const [habits, setHabits] = useState(presenter.getHabits());
 
-  const handleIncrement = (habit) => {
-    setHabits(classApp.handleIncrement(habits, habit));
-  };
+  const handleIncrement = useCallback(
+    (habit) => {
+      presenter.increment(habit, setHabits);
+    },
+    [presenter]
+  );
 
-  const handleDecrement = (habit) => {
-    setHabits(classApp.handleDecrement(habits, habit));
-  };
+  const handleDecrement = useCallback(
+    (habit) => {
+      presenter.decrement(habit, setHabits);
+    },
+    [presenter]
+  );
 
-  const handleDelete = (habit) => {
-    setHabits(classApp.handleDelete(habits, habit));
-  };
+  const handleDelete = useCallback(
+    (habit) => {
+      presenter.delete(habit, setHabits);
+    },
+    [presenter]
+  );
 
-  const handleAdd = (name) => {
-    setHabits(classApp.handleAdd(habits, name));
-  };
+  const handleAdd = useCallback(
+    (name) => {
+      presenter.add(name, setHabits);
+    },
+    [presenter]
+  );
 
-  const handleReset = () => {
-    setHabits(classApp.handleReset(habits));
-  };
+  const handleReset = useCallback(() => {
+    presenter.reset(setHabits);
+  }, [presenter]);
 
   return (
     <>
