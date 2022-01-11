@@ -1,18 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1641383197612" clover="3.2.0">
-  <project timestamp="1641383197612" name="All files">
-    <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="13" coveredelements="13" complexity="0" loc="9" ncloc="9" packages="1" files="1" classes="1"/>
-    <file name="habitAddForm.jsx" path="/Users/kimyoungman/Desktop/study/front/jest/reactTest_Habit/src/components/form/habitAddForm.jsx">
+<coverage generated="1641913484363" clover="3.2.0">
+  <project timestamp="1641913484363" name="All files">
+    <metrics statements="62" coveredstatements="60" conditionals="12" coveredconditionals="12" methods="27" coveredmethods="27" elements="101" coveredelements="99" complexity="0" loc="62" ncloc="62" packages="6" files="7" classes="7"/>
+    <package name="src">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="/Users/kimyoungman/Desktop/study/front/jest/reactTest_Habit/src/index.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app">
+      <metrics statements="39" coveredstatements="39" conditionals="10" coveredconditionals="10" methods="18" coveredmethods="18"/>
+      <file name="app.jsx" path="/Users/kimyoungman/Desktop/study/front/jest/reactTest_Habit/src/app/app.jsx">
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="13" type="stmt"/>
+        <line num="11" count="13" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="13" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="13" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="13" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="13" type="stmt"/>
+        <line num="33" count="39" type="stmt"/>
+      </file>
+      <file name="habit_presenter.js" path="/Users/kimyoungman/Desktop/study/front/jest/reactTest_Habit/src/app/habit_presenter.js">
+        <metrics statements="25" coveredstatements="25" conditionals="10" coveredconditionals="10" methods="11" coveredmethods="11"/>
+        <line num="3" count="16" type="stmt"/>
+        <line num="4" count="16" type="stmt"/>
+        <line num="8" count="30" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="33" count="5" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="38" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="47" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="3" type="stmt"/>
+        <line num="50" count="4" type="stmt"/>
+        <line num="52" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.form">
       <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="3" type="stmt"/>
-      <line num="5" count="3" type="stmt"/>
-      <line num="7" count="3" type="stmt"/>
-      <line num="8" count="2" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
-      <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="14" count="3" type="stmt"/>
-    </file>
+      <file name="habitAddForm.jsx" path="/Users/kimyoungman/Desktop/study/front/jest/reactTest_Habit/src/components/form/habitAddForm.jsx">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="16" type="stmt"/>
+        <line num="5" count="16" type="stmt"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="14" count="16" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.habit">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="habit.jsx" path="/Users/kimyoungman/Desktop/study/front/jest/reactTest_Habit/src/components/habit/habit.jsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="42" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="8" count="42" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="12" count="42" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="16" count="42" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.habits">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="habits.jsx" path="/Users/kimyoungman/Desktop/study/front/jest/reactTest_Habit/src/components/habits/habits.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="13" count="19" type="stmt"/>
+        <line num="18" count="51" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.navbar">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="navbar.jsx" path="/Users/kimyoungman/Desktop/study/front/jest/reactTest_Habit/src/components/navbar/navbar.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="12" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

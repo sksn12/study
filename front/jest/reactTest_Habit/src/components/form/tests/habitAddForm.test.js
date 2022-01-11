@@ -1,34 +1,35 @@
-import React from "react"; // react가져와야 테스트 성공
-import HabitAddForm from "../habitAddForm";
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import renderer from "react-test-renderer";
+import React from 'react';
+import { screen, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import HabitAddForm from '../habitAddForm';
+import renderer from 'react-test-renderer';
 
-describe("test", () => {
-  it("renders", () => {
+describe('HabitAddForm', () => {
+  it('renders', () => {
     const component = renderer.create(<HabitAddForm onAdd={jest.fn()} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  describe("Form Submit", () => {
+
+  describe('Form Submit', () => {
     let onAdd;
     let input;
     let button;
     beforeEach(() => {
       onAdd = jest.fn();
       render(<HabitAddForm onAdd={onAdd} />);
-      input = screen.getByPlaceholderText("Habit");
-      button = screen.getByText("Add");
+      input = screen.getByPlaceholderText('Habit');
+      button = screen.getByText('Add');
     });
-    it("input test", () => {
-      //사용자가 input에 타입에 New Habit이라는 문장을 넣고
-      userEvent.type(input, "New Habit");
-      // 버튼을 클릭함
+
+    it('calls onAdd when button is clicked and valid habit is entered', () => {
+      userEvent.type(input, 'New Habit');
       userEvent.click(button);
-      // onAdd mock함수는  New Habit과 함께 호출됨
-      expect(onAdd).toHaveBeenCalledWith("New Habit");
+
+      expect(onAdd).toHaveBeenCalledWith('New Habit');
     });
-    it("When input text is noting called zero", () => {
-      userEvent.type(input, "");
+
+    it('does not call onAdd when the habit is empty', () => {
+      userEvent.type(input, '');
       userEvent.click(button);
 
       expect(onAdd).toHaveBeenCalledTimes(0);
