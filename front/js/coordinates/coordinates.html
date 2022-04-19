@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        overflow-y: auto;
+        position: absolute;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: blanchedalmond;
+        margin: 10px;
+      }
+
+      .special_box {
+        background-color: coral;
+      }
+      .btns {
+        position: fixed;
+        right: 0;
+      }
+      .btn {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btns">
+      <button class="btn btn1">Scoll by 100px(y)</button>
+      <button class="btn btn2">Scoll to 100px(y)</button>
+      <button class="btn btn3">Scoll into special_box(y)</button>
+    </div>
+    <div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="special_box box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <script>
+      const special_box = document.querySelector(".special_box");
+      const btn1 = document.querySelector(".btn1");
+      const btn2 = document.querySelector(".btn2");
+      const btn3 = document.querySelector(".btn3");
+
+      special_box.addEventListener("click", () => {
+        console.log(special_box.getBoundingClientRect());
+      });
+
+      btn1.addEventListener("click", () => {
+        window.scrollBy(0, 100);
+      });
+
+      btn2.addEventListener("click", () => {
+        window.scrollTo(0, 100);
+      });
+
+      btn3.addEventListener("click", () => {
+        window.scrollTo(
+          special_box.getBoundingClientRect().x,
+          special_box.getBoundingClientRect().y
+        );
+      });
+    </script>
+  </body>
+</html>

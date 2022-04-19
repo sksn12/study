@@ -1,28 +1,35 @@
+import axios from "axios";
+
 class Youtube {
   constructor(key) {
-    this.key = key;
-    this.getRequestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
+    this.youtube = axios.create({
+      baseURL: "https://www.googleapis.com/youtube/v3",
+      params: { key: key },
+    });
   }
-  async search(query) {
-    return await fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&videoEmbeddable=true&key=${this.key}`,
-      this.getRequestOptions
-    )
-      .then((response) => response.json())
-      .then((result) =>
-        result.items.map((item) => ({ ...item, id: item.id.videoId }))
-      );
-  }
+
   async mostPopualr() {
-    return await fetch(
-      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`,
-      this.getRequestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => result.items);
+    const response = await this.youtube.get("videos", {
+      params: {
+        part: "snippet",
+        chart: "mostPopular",
+        maxResults: 25,
+      },
+    });
+    return response.data.items;
+  }
+
+  async search(query) {
+    const response = await this.youtube.get("search", {
+      params: {
+        part: "snippet",
+        maxResults: 25,
+        q: query,
+        type: "video",
+        videoEmbeddable: true,
+      },
+    });
+    return response.data.items;
   }
 }
 export default Youtube;

@@ -14,13 +14,13 @@ function logMessage(value: string | number) {
 }
 
 function logMessage(value: string | number) {
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     value.toLocaleUpperCase();
   }
-  if (typeof value === 'number') {
+  if (typeof value === "number") {
     value.toLocaleString();
   }
-  throw new TypeError('value must be string or number')
+  throw new TypeError("value must be string or number");
 }
 
 // # Intersection 타입 문법
@@ -38,3 +38,32 @@ function askSomeone(someone: Developer | Person) {
   someone.name; // O
   someone.age; // X
 }
+
+
+enum Shoes{
+  Nike="nike",
+  Adidas="adidas"
+}
+let adidas=Shoes.Adidas;
+// 1
+
+
+
+enum Answer{
+  tmp1="yes",
+  tmp2="no"
+}
+
+
+function ask(answer:string){
+  if(answer==="yes"){
+    console.log(1);
+  }
+
+  if(answer==="no"){
+    console.log(1);
+  }
+}
+
+ask(Answer.tmp1)
+

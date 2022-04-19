@@ -1,0 +1,36 @@
+body {
+  background-color: black;
+}
+div {
+  position: absolute;
+  right: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  width: 100%;
+  display: inline-block;
+  font-size: 24px;
+  color: white;
+  background-color: coral;
+  border: none;
+  margin-top: 10px;
+}
+img {
+  margin-top: 10px;
+}
+.up_btn {
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: skyblue;
+  color: violet;
+  font-size: 36px;
+}
+.up_btn:hover {
+  transform: scale(1.1);
+}

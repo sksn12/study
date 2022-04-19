@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5", //ts를 어떤 버전의 js로 변환할지 결정
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true, // js 컴파일 허용
+    "skipLibCheck": true, // 모든 선언 파일의 타입 검사를 건너뜀
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, // default export가 없는 모듈에서 default imports를 허용
+    "strict": false, //엄격한 검사 On
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext", //js파일간 import 문법을 구현할때 어떤 문법을 쓸지 coomonjs는 require   es2015,esnext 는 import esnextTmtpa
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx", // tsx에서 jsx지원
+    "noImplicitAny": true, // 최소한 타입정의를 any라도 해야함
+    "checkJs": true // ts문법검사
+  },
+  "include": ["src"]
+}

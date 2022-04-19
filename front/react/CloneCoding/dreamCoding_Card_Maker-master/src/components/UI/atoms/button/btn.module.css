@@ -1,0 +1,47 @@
+.delete {
+  width: 50px;
+  height: 50px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.reset {
+  display: inline-block;
+  padding: 0 20px;
+  color: white;
+  background-color: green;
+  width: 5%;
+  height: 7%;
+  text-align: center;
+  margin-top: 1%;
+}
+.reset:hover {
+  transform: scale(1.1);
+}
+
+.add {
+  color: white;
+  background-color: green;
+  width: 20%;
+  height: 100%;
+  margin-left: 2%;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(207, 207, 82);
+  color: white;
+  font-size: 36px;
+  border-radius: 10%;
+  text-align: center;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
