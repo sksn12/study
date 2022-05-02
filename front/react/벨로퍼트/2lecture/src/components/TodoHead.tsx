@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useTodoState } from "./TodoContext";
 
 const TodoHead = () => {
-  const todos = useTodoState().state?.filter((todo) => todo.done).length;
+  const todos = useTodoState().filter((todo) => todo.done).length;
 
   return (
     <TodoHeadBlock>

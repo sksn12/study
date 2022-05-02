@@ -7,42 +7,39 @@ import { useTodoDispatch, useTodoNextId } from "./TodoContext";
 const TodoCreate = () => {
   const [open, setOpen] = useState(false);
   const [InputValue, setInputValue] = useState("");
+  const Id = useTodoNextId();
+  const dispatch = useTodoDispatch();
 
   const onToggle = useCallback(() => setOpen(!open), [open]);
 
-  const onChange = useCallback(
-    (e: any) => {
-      const { value } = e.target;
-      setInputValue(value);
-    },
-    [setInputValue]
-  );
+  const onChange = (e: any) => {
+    setInputValue(e.target.value);
+  };
 
-  const onEnter = (e: any) => {
+  const onSubmit = (e: any) => {
     e.preventDefault();
-    const { key } = e;
-    if (key === "Enter") {
-      const id = useTodoNextId();
-      useTodoDispatch().dispatch({
-        type: "CREATE",
-        todo: {
-          id: id.current,
-          text: value,
-          done: false,
-        },
-      });
-    }
+    if (InputValue === "") return;
+
+    dispatch({
+      type: "CREATE",
+      todo: {
+        id: Id.current,
+        text: InputValue,
+        done: false,
+      },
+    });
+    Id.current += 1;
+    setInputValue("");
   };
 
   return (
     <>
       {open && (
         <InsertFormPositioner>
-          <InsertForm>
+          <InsertForm onSubmit={onSubmit}>
             <Input
-              onChange={onChange}
               value={InputValue}
-              onKeyDown={onEnter}
+              onChange={onChange}
               autoFocus
               placeholder="할 일을 입력 후, Enter 를 누르세요"
             />

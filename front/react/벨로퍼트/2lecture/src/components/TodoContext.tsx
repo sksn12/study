@@ -1,18 +1,16 @@
-import { useRef } from "react";
-import { useContext } from "react";
-import { createContext, useReducer } from "react";
+import { Dispatch, useRef, useContext, createContext, useReducer } from "react";
 
 export interface initialTodosType {
+  key?: number;
   id: number;
   text: string;
   done: boolean;
 }
 
-// createContext사용을 위한 인터페이스 정의
-interface IContextProps {
-  state?: initialTodosType[];
-  dispatch?: ({ type }: { type: string }) => void;
-}
+type Action =
+  | { type: "CREATE"; todo: initialTodosType }
+  | { type: "REMOVE"; id: number }
+  | { type: "TOGLE"; id: number; done: boolean };
 
 const initialTodos: initialTodosType[] = [
   {
@@ -38,7 +36,7 @@ const initialTodos: initialTodosType[] = [
 ];
 
 // action 타입 재정의 필요
-function todoReducer(state: initialTodosType[], action: any) {
+function todoReducer(state: initialTodosType[], action: Action) {
   switch (action.type) {
     case "CREATE":
       return state.concat(action.todo);
@@ -49,22 +47,26 @@ function todoReducer(state: initialTodosType[], action: any) {
         e.id === action.id ? { ...e, done: !e.done } : e
       );
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      throw new Error("Unhandled action type");
   }
 }
 
-const TodoStateContext = createContext({} as IContextProps);
-const TodoDispatchContext = createContext({} as IContextProps);
-const TodoNextIdContext = createContext({});
+type SampleDispatch = Dispatch<Action>;
+
+const TodoStateContext = createContext<initialTodosType[] | null>(null);
+const TodoDispatchContext = createContext<SampleDispatch | null>(null);
+const TodoNextIdContext = createContext<React.MutableRefObject<number> | null>(
+  null
+);
 
 const TodoContext = ({ children }: { children: any }) => {
   const [state, dispatch] = useReducer(todoReducer, initialTodos);
   const nextId = useRef(5);
 
   return (
-    <TodoStateContext.Provider value={{ state }}>
-      <TodoDispatchContext.Provider value={{ dispatch }}>
-        <TodoNextIdContext.Provider value={{ nextId }}>
+    <TodoStateContext.Provider value={state}>
+      <TodoDispatchContext.Provider value={dispatch}>
+        <TodoNextIdContext.Provider value={nextId}>
           {children}
         </TodoNextIdContext.Provider>
       </TodoDispatchContext.Provider>
