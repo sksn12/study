@@ -1,7 +1,6 @@
-import { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styled, { css } from "styled-components";
 import { MdAdd } from "react-icons/md";
-import { useCallback } from "react";
 import { useTodoDispatch, useTodoNextId } from "./TodoContext";
 
 const TodoCreate = () => {
@@ -53,7 +52,7 @@ const TodoCreate = () => {
   );
 };
 
-export default TodoCreate;
+export default React.memo(TodoCreate);
 
 const CircleButton = styled.button<{ open: boolean }>`
   background: #38d9a9;

@@ -35,6 +35,7 @@ const initialTodos: initialTodosType[] = [
   },
 ];
 
+// action 타입 재정의 필요
 function todoReducer(state: initialTodosType[], action: Action) {
   switch (action.type) {
     case "CREATE":
